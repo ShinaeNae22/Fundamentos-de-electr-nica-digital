@@ -1,0 +1,197 @@
+
+**** 11/13/18 17:12:23 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Program Files\OrCAD_Demo\PSpice\UserLib\PEC1\controladorALU.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.1 - Web Update 1
+* Tue Nov 13 17:12:23 2018
+
+
+
+** Analysis setup **
+.tran 2ms 5ms
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "controladorALU.net"
+
+**** INCLUDING controladorALU.net ****
+* Schematics Netlist *
+
+
+
+X_U4A         $N_0001 $N_0002 $G_DPWR $G_DGND 7404 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U6A         $N_0003 $N_0004 $G_DPWR $G_DGND 7404 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U2A         C1 $N_0005 $G_DPWR $G_DGND 7404 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U3A         $N_0005 $N_0002 $N_0003 C3 $G_DPWR $G_DGND 7411 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U32A         $N_0006 Cn $G_DPWR $G_DGND 7404 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U33A         $N_0007 M $G_DPWR $G_DGND 7404 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U35A         S2 $N_0007 $G_DPWR $G_DGND 7404 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U29A         C2 $N_0008 $G_DPWR $G_DGND 7404 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U1A         $N_0005 $N_0001 C2 $G_DPWR $G_DGND 7408 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U5A         $N_0005 $N_0002 $N_0004 C4 $G_DPWR $G_DGND 7411 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U34A         C3 C4 S2 $G_DPWR $G_DGND 7432 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U30A         $D_HI S1 $G_DPWR $G_DGND 7404 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U28A         $N_0008 S0 $G_DPWR $G_DGND 7404 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U36A         C1 $N_0006 $G_DPWR $G_DGND 7404 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U31A         C3 S3 $G_DPWR $G_DGND 7404 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+U_P0         STIM(1,1) $G_DPWR $G_DGND $N_0001 IO_STM IO_LEVEL=0 
++ 0 0
++ +1ms 1
++REPEAT FOREVER
++ +1ms 0
++  +1ms 1
++ ENDREPEAT
+U_P1         STIM(1,1) $G_DPWR $G_DGND $N_0003 IO_STM IO_LEVEL=0 
++ 0 0
++ +0.5ms 1
++REPEAT FOREVER
++ +0.5ms 0
++  +0.5ms 1
++ ENDREPEAT
+U_P2         STIM(1,1) $G_DPWR $G_DGND C1 IO_STM IO_LEVEL=0 
++ 0 0
++ +2ms 1
++REPEAT FOREVER
++ +2ms 0
++  +2ms 1
++ ENDREPEAT
+
+**** RESUMING controladorALU.cir ****
+.INC "controladorALU.als"
+
+
+
+**** INCLUDING controladorALU.als ****
+* Schematics Aliases *
+
+.ALIASES
+X_U4A           U4A(A=$N_0001 Y=$N_0002 PWR=$G_DPWR GND=$G_DGND )
+X_U6A           U6A(A=$N_0003 Y=$N_0004 PWR=$G_DPWR GND=$G_DGND )
+X_U2A           U2A(A=C1 Y=$N_0005 PWR=$G_DPWR GND=$G_DGND )
+X_U3A           U3A(A=$N_0005 B=$N_0002 C=$N_0003 Y=C3 PWR=$G_DPWR GND=$G_DGND
++  )
+X_U32A          U32A(A=$N_0006 Y=Cn PWR=$G_DPWR GND=$G_DGND )
+X_U33A          U33A(A=$N_0007 Y=M PWR=$G_DPWR GND=$G_DGND )
+X_U35A          U35A(A=S2 Y=$N_0007 PWR=$G_DPWR GND=$G_DGND )
+X_U29A          U29A(A=C2 Y=$N_0008 PWR=$G_DPWR GND=$G_DGND )
+X_U1A           U1A(A=$N_0005 B=$N_0001 Y=C2 PWR=$G_DPWR GND=$G_DGND )
+X_U5A           U5A(A=$N_0005 B=$N_0002 C=$N_0004 Y=C4 PWR=$G_DPWR GND=$G_DGND
++  )
+X_U34A          U34A(A=C3 B=C4 Y=S2 PWR=$G_DPWR GND=$G_DGND )
+X_U30A          U30A(A=$D_HI Y=S1 PWR=$G_DPWR GND=$G_DGND )
+X_U28A          U28A(A=$N_0008 Y=S0 PWR=$G_DPWR GND=$G_DGND )
+X_U36A          U36A(A=C1 Y=$N_0006 PWR=$G_DPWR GND=$G_DGND )
+X_U31A          U31A(A=C3 Y=S3 PWR=$G_DPWR GND=$G_DGND )
+U_P0            P0(PWR=$G_DPWR GND=$G_DGND 1=$N_0001 )
+U_P1            P1(PWR=$G_DPWR GND=$G_DGND 1=$N_0003 )
+U_P2            P2(PWR=$G_DPWR GND=$G_DGND 1=C1 )
+_    _(C1=C1)
+_    _(C3=C3)
+_    _(Cn=Cn)
+_    _(M=M)
+_    _(S2=S2)
+_    _(C2=C2)
+_    _(C4=C4)
+_    _(S1=S1)
+_    _(S0=S0)
+_    _(S3=S3)
+_    _($G_DPWR=$G_DPWR)
+_    _($G_DGND=$G_DGND)
+.ENDALIASES
+
+
+**** RESUMING controladorALU.cir ****
+.probe
+
+
+.END
+
+**** 11/13/18 17:12:23 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Program Files\OrCAD_Demo\PSpice\UserLib\PEC1\controladorALU.sch
+
+
+ ****     Digital Gate MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D_04            D_11            D_08            D_32            
+      TPLHMN    4.800000E-09    6.750001E-09    7.000000E-09    4.000000E-09 
+      TPLHTY   12.000000E-09   16.875000E-09   17.500000E-09   10.000000E-09 
+      TPLHMX   22.000000E-09   27.000000E-09   27.000000E-09   15.000000E-09 
+      TPHLMN    3.200000E-09    4.750000E-09    4.800000E-09    5.600000E-09 
+      TPHLTY    8.000000E-09   11.875000E-09   12.000000E-09   14.000000E-09 
+      TPHLMX   15.000000E-09   19.000000E-09   19.000000E-09   22.000000E-09 
+
+
+**** 11/13/18 17:12:23 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Program Files\OrCAD_Demo\PSpice\UserLib\PEC1\controladorALU.sch
+
+
+ ****     Digital IO  MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               IO_STM          IO_STD          
+        DRVL    0             104            
+        DRVH    0              96.4          
+       AtoD1                 AtoD_STD        
+       AtoD2                 AtoD_STD_NX     
+       AtoD3                 AtoD_STD        
+       AtoD4                 AtoD_STD_NX     
+       DtoA1 DtoA_STM        DtoA_STD        
+       DtoA2 DtoA_STM        DtoA_STD        
+       DtoA3 DtoA_STM        DtoA_STD        
+       DtoA4 DtoA_STM        DtoA_STD        
+      TSWHL1                    1.373000E-09 
+      TSWHL2                    1.346000E-09 
+      TSWHL3                    1.511000E-09 
+      TSWHL4                    1.487000E-09 
+      TSWLH1                    3.382000E-09 
+      TSWLH2                    3.424000E-09 
+      TSWLH3                    3.517000E-09 
+      TSWLH4                    3.564000E-09 
+       TPWRT  100.000000E+03  100.000000E+03 
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .05
+

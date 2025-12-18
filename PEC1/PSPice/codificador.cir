@@ -1,0 +1,22 @@
+* C:\Program Files\OrCAD_Demo\PSpice\UserLib\PEC1\codificador.sch
+
+* Schematics Version 9.1 - Web Update 1
+* Thu Nov 08 20:09:06 2018
+
+
+
+** Analysis setup **
+.tran 1ms 5ms
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "codificador.net"
+.INC "codificador.als"
+
+
+.probe
+
+
+.END

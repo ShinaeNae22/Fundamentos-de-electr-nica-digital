@@ -1,0 +1,164 @@
+
+**** 11/10/18 17:04:58 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Program Files\OrCAD_Demo\PSpice\UserLib\PEC1\codificador.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.1 - Web Update 1
+* Thu Nov 08 20:09:06 2018
+
+
+
+** Analysis setup **
+.tran 1ms 5ms
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "codificador.net"
+
+**** INCLUDING codificador.net ****
+* Schematics Netlist *
+
+
+
+X_U1A         $N_0001 $N_0002 C2 $G_DPWR $G_DGND 7408 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U10A         C1 $N_0001 $G_DPWR $G_DGND 7404 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U11A         $N_0001 $N_0003 $N_0004 C3 $G_DPWR $G_DGND 7411 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U12A         $N_0002 $N_0003 $G_DPWR $G_DGND 7404 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U13A         $N_0001 $N_0003 $N_0005 C4 $G_DPWR $G_DGND 7411 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U14A         $N_0004 $N_0005 $G_DPWR $G_DGND 7404 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+U_P1         STIM(1,1) $G_DPWR $G_DGND $N_0004 IO_STM IO_LEVEL=0 
++ 0 0
++ +0.5ms 1
++REPEAT FOREVER
++ +0.5ms 0
++  +0.5ms 1
++ ENDREPEAT
+U_P0         STIM(1,1) $G_DPWR $G_DGND $N_0002 IO_STM IO_LEVEL=0 
++ 0 0
++ +1ms 1
++REPEAT FOREVER
++ +1ms 0
++  +1ms 1
++ ENDREPEAT
+U_P2         STIM(1,1) $G_DPWR $G_DGND C1 IO_STM IO_LEVEL=0 
++ 0 0
++ +2ms 1
++REPEAT FOREVER
++ +2ms 0
++  +2ms 1
++ ENDREPEAT
+
+**** RESUMING codificador.cir ****
+.INC "codificador.als"
+
+
+
+**** INCLUDING codificador.als ****
+* Schematics Aliases *
+
+.ALIASES
+X_U1A           U1A(A=$N_0001 B=$N_0002 Y=C2 PWR=$G_DPWR GND=$G_DGND )
+X_U10A          U10A(A=C1 Y=$N_0001 PWR=$G_DPWR GND=$G_DGND )
+X_U11A          U11A(A=$N_0001 B=$N_0003 C=$N_0004 Y=C3 PWR=$G_DPWR GND=$G_DGND
++  )
+X_U12A          U12A(A=$N_0002 Y=$N_0003 PWR=$G_DPWR GND=$G_DGND )
+X_U13A          U13A(A=$N_0001 B=$N_0003 C=$N_0005 Y=C4 PWR=$G_DPWR GND=$G_DGND
++  )
+X_U14A          U14A(A=$N_0004 Y=$N_0005 PWR=$G_DPWR GND=$G_DGND )
+U_P1            P1(PWR=$G_DPWR GND=$G_DGND 1=$N_0004 )
+U_P0            P0(PWR=$G_DPWR GND=$G_DGND 1=$N_0002 )
+U_P2            P2(PWR=$G_DPWR GND=$G_DGND 1=C1 )
+_    _(C2=C2)
+_    _(C1=C1)
+_    _(C3=C3)
+_    _(C4=C4)
+_    _($G_DPWR=$G_DPWR)
+_    _($G_DGND=$G_DGND)
+.ENDALIASES
+
+
+**** RESUMING codificador.cir ****
+.probe
+
+
+.END
+
+**** 11/10/18 17:04:58 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Program Files\OrCAD_Demo\PSpice\UserLib\PEC1\codificador.sch
+
+
+ ****     Digital Gate MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D_08            D_04            D_11            
+      TPLHMN    7.000000E-09    4.800000E-09    6.750001E-09 
+      TPLHTY   17.500000E-09   12.000000E-09   16.875000E-09 
+      TPLHMX   27.000000E-09   22.000000E-09   27.000000E-09 
+      TPHLMN    4.800000E-09    3.200000E-09    4.750000E-09 
+      TPHLTY   12.000000E-09    8.000000E-09   11.875000E-09 
+      TPHLMX   19.000000E-09   15.000000E-09   19.000000E-09 
+
+
+**** 11/10/18 17:04:58 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Program Files\OrCAD_Demo\PSpice\UserLib\PEC1\codificador.sch
+
+
+ ****     Digital IO  MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               IO_STM          IO_STD          
+        DRVL    0             104            
+        DRVH    0              96.4          
+       AtoD1                 AtoD_STD        
+       AtoD2                 AtoD_STD_NX     
+       AtoD3                 AtoD_STD        
+       AtoD4                 AtoD_STD_NX     
+       DtoA1 DtoA_STM        DtoA_STD        
+       DtoA2 DtoA_STM        DtoA_STD        
+       DtoA3 DtoA_STM        DtoA_STD        
+       DtoA4 DtoA_STM        DtoA_STD        
+      TSWHL1                    1.373000E-09 
+      TSWHL2                    1.346000E-09 
+      TSWHL3                    1.511000E-09 
+      TSWHL4                    1.487000E-09 
+      TSWLH1                    3.382000E-09 
+      TSWLH2                    3.424000E-09 
+      TSWLH3                    3.517000E-09 
+      TSWLH4                    3.564000E-09 
+       TPWRT  100.000000E+03  100.000000E+03 
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .02
+

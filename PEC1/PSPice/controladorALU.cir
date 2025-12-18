@@ -1,0 +1,22 @@
+* C:\Program Files\OrCAD_Demo\PSpice\UserLib\PEC1\controladorALU.sch
+
+* Schematics Version 9.1 - Web Update 1
+* Tue Nov 13 17:12:23 2018
+
+
+
+** Analysis setup **
+.tran 2ms 5ms
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "controladorALU.net"
+.INC "controladorALU.als"
+
+
+.probe
+
+
+.END
